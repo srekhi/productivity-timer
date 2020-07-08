@@ -24,7 +24,7 @@ app.on('ready', () => {
       showTime()
     }
   }
-
+  
   startTimer = () => { 
     tray.setImage(hourglassPng)
     if(timerID == -1){
@@ -50,7 +50,7 @@ app.on('ready', () => {
   }
 
   resetTimer = () => {
-    stopTimer();
+    // stopTimer();
     timeElapsed = -1;
     tick()
   }
