@@ -59,6 +59,7 @@ app.on('ready', () => {
     { label: 'Start time', type: 'radio', click: startTimer  },
     { label: 'Stop time', type: 'radio', click: stopTimer, checked: true },
     { label: "Toggle time display", type: 'normal', click: toggleTimeDisplay },
+    { label: "---", type: 'normal', enabled:false },
     { label: 'Reset time', type: 'normal', click: resetTimer },
   ])
     tray.setContextMenu(contextMenu)
