@@ -1,7 +1,7 @@
 const path = require("path")
 const { app, Menu, Tray } = require('electron')
 
-const alarmPng = path.join(__dirname, "images/alarm.png")
+const hourglassPng = path.join(__dirname, "images/hourglass.png")
 const sleepPng = path.join(__dirname, "images/sleep.png")
 
 app.on('ready', () => {
@@ -26,7 +26,7 @@ app.on('ready', () => {
   }
 
   startTimer = () => { 
-    tray.setImage(alarmPng)
+    tray.setImage(hourglassPng)
     if(timerID == -1){
       timerID = setInterval(tick, 1000);
     }
