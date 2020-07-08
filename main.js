@@ -12,10 +12,13 @@ app.on('ready', () => {
   let timerID = -1;
   let showRunningTime = false; 
 
-
   showTime = () => {
     const timeStr = new Date(timeElapsed * 1000).toISOString().substr(11, 8);
     tray.setTitle(timeStr);
+  }
+
+  hideTime = () => {
+    tray.setTitle("")
   }
 
   tick = () => {
@@ -45,12 +48,11 @@ app.on('ready', () => {
       if (showRunningTime) { 
         showTime()
       } else { 
-        tray.setTitle("")
+        hideTime()
       }
   }
 
   resetTimer = () => {
-    // stopTimer();
     timeElapsed = -1;
     tick()
   }
