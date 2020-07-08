@@ -12,11 +12,16 @@ app.on('ready', () => {
   let timerID = -1;
   let showRunningTime = false; 
 
+
+  showTime = () => {
+    const timeStr = new Date(timeElapsed * 1000).toISOString().substr(11, 8);
+    tray.setTitle(timeStr);
+  }
+
   tick = () => {
     timeElapsed++
     if (showRunningTime) { 
-        const timeStr = new Date(timeElapsed * 1000).toISOString().substr(11, 8);
-        tray.setTitle(timeStr);
+      showTime()
     }
   }
 
@@ -37,7 +42,9 @@ app.on('ready', () => {
 
   toggleTimeDisplay = () => {
       showRunningTime = !showRunningTime
-      if (!showRunningTime) { 
+      if (showRunningTime) { 
+        showTime()
+      } else { 
         tray.setTitle("")
       }
   }
